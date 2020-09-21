@@ -1,0 +1,54 @@
+body {
+    background: radial-gradient(#009973, #000000);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.clock {
+    color: #ffffff;
+    display: flex;
+    font-size: 350%;
+    border-radius: 15px;
+    background: #000000;; 
+    box-shadow: 0 0 50px #000000;
+    padding: 2rem;
+
+}
+
+.standard {
+    padding-top: 25px;;
+    font-size: 50%;;
+}
+
+.head {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 150%;
+    border-radius: 5px;
+    background: #ffffff; 
+    box-shadow: 0 0 50px #ffffff;
+    padding: .5rem;
+}
+.date {
+    margin-left: 160px;
+    margin-top: 10px;
+    padding: .3rem;
+    
+    background: #ffffff; 
+    box-shadow: 0 0 50px  #0099ff;
+    
+}
+.hours {
+    padding-right: 10px;
+}
+.mins {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.seconds {
+    padding-left: 10px;
+    padding-right: 10px;
+}
