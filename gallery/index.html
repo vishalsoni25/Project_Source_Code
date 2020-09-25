@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<title>Image Gallery</title>
+
+		<!-- import bootstrap -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+	<link rel="stylesheet" type="text/css" href="styel.css">
+
+		<!-- import jQuery -->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			🅢🅛🅘🅓🅔 🅢🅗🅞🅦 🅖🅐🅛🅛🅔🅡🅨
+		</div>
+		<div class="big screen">
+			<img id="bigImage" src="1.jpg"/>
+		 </div>
+		<div class="navigation">
+			<button id="backward"><i class="fas fa-chevron-circle-left"></i></button> 
+			<button id = "play"><i class="fas fa-play-circle"></i></button>
+			<button id="paused"><i class="fas fa-pause-circle"></i></button>
+			<button id="forward"><i class="fas fa-chevron-circle-right"></i></button>
+		</div>
+		<div class="fonts">
+			<div class="f1"> Left </div>
+			<div class="f1"> Play </div>
+			<div class="f1"> Paused </div>
+			<div class="f1"> Right </div>
+		</div>
+		
+		<div class="lists">
+			<img class="crop-image" id="image1" src="1.jpg"/>
+			<img class="crop-image" id="image2" src="2.jpg"/>
+			<img class="crop-image" id="image3" src="3.jpg"/>
+			<img class="crop-image" id="image4" src="4.jpg"/>
+			<img class="crop-image" id="image5" src="5.jpg"/>
+			<img class="crop-image" id="image6" src="6.jpg"/>
+			<img class="crop-image" id="image7" src="7.jpg"/>
+			<img class="crop-image" id="image8" src="8.jpg"/>
+			<img class="crop-image" id="image9" src="9.jpg"/>
+			<img class="crop-image" id="image10" src="10.jpg"/>
+			<img class="crop-image" id="image11" src="11.jpg"/>
+			<img class="crop-image" id="image12" src="12.jpg"/>
+			<img class="crop-image" id="image13" src="13.jpg"/>
+			<img class="crop-image" id="image14" src="14.jpg"/>
+			<img class="crop-image" id="image15" src="15.jpg"/>
+			<img class="crop-image" id="image16" src="16.jpg"/>
+		</div>
+	
+
+	<script>
+		// whether the slideshow is paused or not
+		var paused = true;
+
+		$(".crop-image").click(function() {
+			$("#bigImage").attr("src",$(this).attr("src"));
+		})
+
+		var counter = 1;
+		$("#image"+counter).click();
+
+		$("#backward").click(function(){
+			counter = counter - 1;
+			if(counter < 0) {
+				counter = 16;
+			}
+			$("#image"+counter).click();
+		})
+
+		$("#forward").click(function() {
+			counter = counter + 1;
+			if(counter > 16) {
+				counter = 1;
+			} 
+			$("#image"+counter).click();
+		})
+
+		$("#paused").click(function(){
+			paused = false;
+		})
+		$("#play").click(function(){
+			paused = true;
+		})
+
+		setInterval(function(){
+			if(paused){
+			$("#forward").click();}
+		},3000)
+
+
+		
+
+
+	</script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
